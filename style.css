@@ -1,4 +1,3 @@
-/* Common Styles */
 * {
     margin: 0;
     padding: 0;
@@ -42,7 +41,7 @@ header {
 #menu-icon {
     font-size: 3rem;
     color: var(--main-color);
-    display: none;
+    display: none; /* Hidden by default */
     cursor: pointer;
 }
 
@@ -101,14 +100,7 @@ span {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    header {
-        padding: 2rem 5%;
-    }
-
-    #menu-icon {
-        display: block;
-    }
-
+    /* Navbar styles for mobile */
     .navbar {
         position: absolute;
         top: 0;
@@ -137,16 +129,11 @@ span {
     .gradient-btn {
         display: none; /* Hide button on mobile for better spacing */
     }
-}
 
-/* For Tablets and Small Screens (768px to 1024px) */
-@media (max-width: 1024px) {
-    .navbar a {
-        font-size: 1.6rem;
-        margin-left: 2rem;
+    #menu-icon {
+        display: block; /* Show the menu icon on mobile */
     }
 }
-
 
 /* Section Layout */
 section {
@@ -253,44 +240,6 @@ section {
     transform: scale(1.05);
     box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
 }
-
-/* Mobile Responsive Styles */
-@media (max-width: 768px) {
-    .home {
-        flex-direction: column; /* Stacks the content and image vertically */
-        align-items: center;
-        text-align: center;
-    }
-
-    .home-content {
-        align-items: center;
-        text-align: center;
-    }
-
-    .home-img {
-        flex: 0;
-        margin-top: 2rem;
-    }
-
-    .home-img img {
-        max-width: 200px;
-    }
-
-    .social-icons a {
-        margin: 1rem;
-    }
-
-    .btn-group {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        margin: 1rem 0;
-    }
-}
-
-
 .home {
     display: flex;
     align-items: center;
@@ -390,43 +339,6 @@ section {
     transform: scale(1.05);
     box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
 }
-
-
-@media (max-width: 768px) {
-    .home {
-        flex-direction: column; 
-        align-items: center;
-        text-align: center;
-    }
-
-    .home-content {
-        align-items: center;
-        text-align: center;
-    }
-
-    .home-img {
-        flex: 0;
-        margin-top: 2rem;
-    }
-
-    .home-img img {
-        max-width: 200px;
-    }
-
-    .social-icons a {
-        margin: 1rem;
-    }
-
-    .btn-group {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        margin: 1rem 0;
-    }
-}
-
  .about {
     display: flex;
     justify-content: center;
@@ -480,31 +392,6 @@ section {
 
 .about-content .btn:hover {
     background: darken(var(--main-color), 10%);
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    .about {
-        flex-direction: column; /* Stacks image and content vertically */
-        text-align: center; /* Centers text */
-        gap: 2rem; /* Reduces gap for smaller screens */
-    }
-
-    .about-img img {
-        width: 200px; /* Smaller image size for mobile */
-    }
-
-    .about-content h2 {
-        font-size: 2.5rem; /* Scales down heading */
-    }
-
-    .about-content p {
-        font-size: 1.6rem; /* Scales down paragraph text */
-    }
-
-    .about-content .btn {
-        font-size: 1.4rem; /* Smaller button text */
-    }
 }
 
 ::-webkit-scrollbar {
@@ -766,60 +653,6 @@ section {
     margin-top: 40px;
     font-size: 16px;
   }
-  /* Responsive Styles */
-@media (max-width: 768px) {
-    #menu-icon {
-        display: block;
-    }
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: -100%;
-        background-color: var(--second-bg-color);
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        transition: 0.3s ease;
-    }
-    .navbar.active {
-        left: 0;
-    }
-    .gradient-btn {
-        display: none; /* Hide on mobile, adjust as needed */
-    }
-}
-
-@media (max-width: 480px) {
-    html {
-        font-size: 50%;
-    }
-    .home-content h1 {
-        font-size: 2.5rem;
-    }
-    .home-content p {
-        font-size: 1.2rem;
-    }
-    .btn-group .btn {
-        font-size: 1.3rem;
-        padding: 0.8rem 1.5rem;
-    }
-    .projects-box {
-        grid-template-columns: 1fr; /* Stack projects on small screens */
-    }
-    .contact .input-group {
-        flex-direction: column;
-    }
-    @media (max-width: 768px) {
-        #menu-icon {
-            display: block;
-        }
-        .navbar {
-            display: none;
-        }
-    }
-
     .btn {
         transition: all 0.3s ease-in-out;
     }
@@ -828,49 +661,7 @@ section {
         background: var(--main-color);
         color: white;
     }
-    @media screen and (max-width: 768px) {
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: left 0.3s ease-in-out;
-        }
-        .navbar a {
-            margin: 1.5rem 0;
-        }
-        #menu-icon {
-            display: block;
-            cursor: pointer;
-        }
-        .navbar.show {
-            left: 0;
-        }
-    }
-    .services-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-    @media screen and (max-width: 768px) {
-        .services-container {
-            grid-template-columns: 1fr;
-        }
-    }
-    @media screen and (max-width: 768px) {
-        html {
-            font-size: 50%;
-        }
-    }        
-    
-    
-}
+      
   .project-card {
     flex: 1 1 30%;
     margin: 1rem;
